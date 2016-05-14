@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'backend.services.accounts',
+    'backend.services.meals',
     'rest_framework'
 ]
 
