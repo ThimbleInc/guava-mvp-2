@@ -1,0 +1,37 @@
+postgres:
+  image: postgres:9.5
+  ports:
+    - "5432:5432"
+  volumes_from:
+    - postgresdata
+
+postgresdata:
+  image: postgres:9.5
+  volumes:
+    - /var/lib/postgresql
+  command: "true"
+
+backend:
+  restart: always
+  build: ./backend
+  expose:
+    - "8000"
+  links:
+    - postgres:postgres
+  volumes:
+    - ./backend:/usr/src/app/
+    - ./backend/static:/usr/src/app/static
+  env_file: .dev_env
+  command: /usr/local/bin/gunicorn -w 1 -b :8000 --log-file=- --access-logfile=- --reload backend.wsgi:application
+
+nginx:
+  restart: always
+  build: ./nginx/
+  ports:
+    - "80:80"
+  volumes:
+    - /www/static
+  volumes_from:
+    - backend
+  links:
+    - backend:backend
