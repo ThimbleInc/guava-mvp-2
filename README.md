@@ -2,8 +2,8 @@
 
 I'm just dumping everything here. But when this gets too big we can move it into the wiki
 
-Container = Docker Container
-Service = Isolated Programmatic entity centered around a single business responsibility
+- Container = Docker Container
+- Service = Isolated Programmatic entity centered around a single business responsibility
 
 ## Local Set Up
 For this project we are developing locally using Docker. There are 4 main containers: 
@@ -41,13 +41,16 @@ Since each service exposes an api, different front end layers can interact, and 
 #### Useful Commands
 Working with Django and Docker simplifies developing websites greatly by automating many of the mundane and tedious tasks. However, this requires you to understand the different commands in place to run those automations. 
 To run django commands you have to do this: `docker-compose exec backend python manage.py <command>` 
--List of Django commands: https://docs.djangoproject.com/en/1.9/ref/django-admin/
--List of Docker commands: https://github.com/wsargent/docker-cheat-sheet
+
+- List of Django commands: https://docs.djangoproject.com/en/1.9/ref/django-admin/
+- List of Docker commands: https://github.com/wsargent/docker-cheat-sheet
+
 #### Django
 - Models: https://docs.djangoproject.com/en/1.9/ref/models/
 - Settings: https://docs.djangoproject.com/en/1.9/ref/settings/
 #### Django Rest Framework
 Used to make our backend an api 
 - http://www.django-rest-framework.org/
+
 ## Production Deployment
 - TBD 
