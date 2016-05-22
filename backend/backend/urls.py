@@ -17,5 +17,8 @@ from django.conf.urls import url, include
 from django.contrib import admin
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls)
+	# force home page to be admin page for now
+    url(r'^', admin.site.urls),
+    url(r'^admin/', admin.site.urls),
+    url(r'^meals/', include('backend.services.meals.urls', namespace="Meals"))
 ]
