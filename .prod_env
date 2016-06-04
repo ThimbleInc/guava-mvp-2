@@ -1,0 +1,6 @@
+DJANGO_SETTINGS_MODULE=backend.settings.production
+SECRET_KEY=tf22y^a5fd9o_-p@++unqd7k+u(dxox@9$k^%%+9m@c-07m@&9
+DB_NAME=guava
+DB_USER=postgres
+DB_SERVICE=postgres
+DB_PORT=5432
