@@ -22,7 +22,7 @@ backend:
     - ./backend:/usr/src/app/
     - ./backend/static:/usr/src/app/static
   env_file: .prod_env
-  command: /usr/local/bin/gunicorn -w 1 -b :8000 --log-file /ec2-user/logs/error.log backend.wsgi:application
+  command: /usr/local/bin/gunicorn -w 1 -b :8000 --log-file /home/ec2-user/logs/error.log backend.wsgi:application
 
 nginx:
   restart: always
